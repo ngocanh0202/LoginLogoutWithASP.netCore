@@ -1,0 +1,51 @@
+﻿@model StoreYourVideo.Models.User;
+
+@{
+    Layout = "_LoginLayout";
+    ViewData["Title"] = "Register";
+}
+
+
+
+<div class="card">
+    <div class="card-body">
+        <a asp-controller="Home" class="d-flex flex-row-reverse" asp-action="Index">
+            <img src="~/icon/x.svg" width="30px" height="30px" alt="Icon" />
+        </a>
+        <h5 class="card-title">@ViewData["Title"]</h5>
+        <h6 class="card-subtitle mb-2 text-muted">You have want one account for myself?</h6>
+        <p class="card-text">Please input your account information!!</p>
+        <form method="post" asp-controller="Login" asp-action="Register">
+
+            <div class="form-floating mb-3">
+                <input asp-for="UserName" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label asp-for="UserName" for="floatingInput">Email address</label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Password" type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Password">
+                <label asp-for="Password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="PasswordAgain" type="password" class="form-control" id="floatingPasswordAgain" name="PasswordAgain" placeholder="Password">
+                <label asp-for="PasswordAgain" for="floatingPasswordAgain">Password again</label>
+                <span asp-validation-for="PasswordAgain" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <input type="submit" class="btn btn-primary" value="Create your account" />
+            </div>
+        </form>
+
+        <span>You have account? </span> <a asp-controller="Login" asp-action="Index">Login</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
