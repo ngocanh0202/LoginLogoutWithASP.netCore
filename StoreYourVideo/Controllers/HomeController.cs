@@ -29,5 +29,9 @@ namespace StoreYourVideo.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult MyVideo()
+        {
+            return View();
+        }
     }
 }
