@@ -15,6 +15,7 @@ namespace StoreYourVideo.Controllers
 
         public IActionResult Index()
         {
+            Console.WriteLine($"Session {HttpContext.Session.GetString("User")}");
             return View();
         }
 

@@ -11,6 +11,9 @@
         <a asp-controller="Home" class="d-flex flex-row-reverse" asp-action="Index">
             <img src="~/icon/x.svg" width="30px" height="30px" alt="Icon" />
         </a>
+        <h2 class="text-danger">
+            @ViewBag.failedLogin
+        </h2>
         <h5 class="card-title">@ViewData["Title"]</h5>
         <h6 class="card-subtitle mb-2 text-muted">You have one account?</h6>
         <p class="card-text">Please input your account information!!</p>
@@ -21,7 +24,7 @@
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Password" type="password" name="Password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input asp-for="Password"  type="password" name="Password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>

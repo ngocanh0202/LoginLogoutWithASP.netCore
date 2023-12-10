@@ -21,5 +21,10 @@ namespace StoreYourVideo.Models
         [Compare("Password", ErrorMessage = "Your confirm password is not equal your password")]
         public String PasswordAgain { get; set; }
         public ICollection<Video>? videos { get; set; }
+
+        public override string ToString()
+        {
+            return $"{UserName} {Password}";
+        }
     }
 }
